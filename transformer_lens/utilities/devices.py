@@ -12,7 +12,7 @@ import torch
 from torch import nn
 
 import transformer_lens
-
+import math
 
 def get_device_for_block_index(
     index: int,
