@@ -35,7 +35,8 @@ def get_device_for_block_index(
         torch.device: The device for the specified layer index.
     """
     assert cfg.device is not None
-    layers_per_device = cfg.n_layers // cfg.n_devices
+    # layers_per_device = cfg.n_layers // cfg.n_devices
+    layers_per_device = math.ceil(cfg.n_layers / cfg.n_devices)
     if device is None:
         device = cfg.device
     device = torch.device(device)
